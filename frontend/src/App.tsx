@@ -7,6 +7,7 @@ import Results from "./pages/results";
 import PrivateRoute from "./components/PrivateRoutes";
 import Register from "./pages/Register";
 import History from "./pages/History";
+import Profile from "./pages/Profile";
 
 
 export default function App() {
@@ -23,6 +24,9 @@ export default function App() {
         <Route path="*" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/history" element={<History />} />
+        <Route path="/profile" element={<Profile />} />
+
+
         </Route>
       </Routes>
     </BrowserRouter>

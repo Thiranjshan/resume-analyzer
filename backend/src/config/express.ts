@@ -6,6 +6,7 @@ import { errorHandler } from "../middlewares/errorHandler";
 import { requireAuth } from "../middlewares/auth";  
 import analysisRoutes from "../routes/analysis.routes";
 import dashboardRoutes from "../routes/dashboard.routes";
+import profileRoutes from "../routes/profile.routes";
 // ...inside createApp, add:
 
 export function createApp() {
@@ -18,6 +19,7 @@ export function createApp() {
   app.use("/api/analysis", analysisRoutes);
   app.use("/api", dashboardRoutes);
   app.use(errorHandler);
+  app.use("/api/profile", profileRoutes);
 
 //app.get("/api/whoami", requireAuth, (req: any, res) => res.json({ userId: req.userId }));
 
