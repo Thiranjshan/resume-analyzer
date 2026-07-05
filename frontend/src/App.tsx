@@ -5,6 +5,7 @@ import NewAnalysis from "./pages/NewAnalysis";
 import Processing from "./pages/Processing";
 import Results from "./pages/results";
 import PrivateRoute from "./components/PrivateRoutes";
+import Register from "./pages/Register";
 
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
         <Route path="/analysis/:id/processing" element={<Processing />} />
         <Route path="/analysis/:id/results" element={<Results />} />
         <Route path="*" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         
         </Route>
       </Routes>
