@@ -43,6 +43,17 @@ export default function Login() {
 
         <button type="submit" className="w-full bg-blue-600 text-white p-2 rounded">Login</button>
       </form>
+
+      <p className="mt-4 text-sm text-center text-gray-600">
+        Don&apos;t have an account?{' '}
+        <button
+          type="button"
+          onClick={() => navigate("/register")}
+          className="text-blue-600 font-medium underline"
+        >
+          Register
+        </button>
+      </p>
     </div>
   );
 }

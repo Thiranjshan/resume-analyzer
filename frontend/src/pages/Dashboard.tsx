@@ -36,9 +36,17 @@ export default function Dashboard() {
           <p className="text-sm text-gray-500">Avg ATS Score</p>
         </div>
       </div>
-      <Link to="/analysis/new" className="inline-block bg-blue-600 text-white px-4 py-2 rounded">
-        New Analysis
-      </Link>
+      <div className="flex flex-wrap gap-3">
+        <Link to="/analysis/new" className="inline-block bg-blue-600 text-white px-4 py-2 rounded">
+          New Analysis
+        </Link>
+        <Link to="/history" className="inline-block bg-gray-700 text-white px-4 py-2 rounded">
+          History
+        </Link>
+        <Link to="/profile" className="inline-block bg-green-600 text-white px-4 py-2 rounded">
+          Profile
+        </Link>
+      </div>
       <div>
         <h2 className="font-semibold mb-2">Recent Analyses</h2>
         <ul className="space-y-2">
