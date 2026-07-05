@@ -65,14 +65,22 @@ export async function deleteAnalysis(
       : req.params.id;
 
     await prisma.$transaction(async (tx) => {
-      // Delete the dependent resume first
-      await tx.resume.deleteMany({
-        where: {
-          analysisId: id,
-        },
+      if (!id) {
+        throw new Error("analysis id is required");
+      }
+
+      await tx.recommendation.deleteMany({
+        where: { analysisId: id },
       });
 
-      // Then delete the analysis (only if it belongs to the user)
+      await tx.skill.deleteMany({
+        where: { analysisId: id },
+      });
+
+      await tx.resume.deleteMany({
+        where: { analysisId: id },
+      });
+
       await tx.analysis.deleteMany({
         where: {
           id,
