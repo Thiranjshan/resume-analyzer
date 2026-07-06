@@ -6,8 +6,8 @@ import io
 def extract_text(file: UploadFile) -> str:
     content = file.file.read()
     filename = file.filename.lower()
-    print("Filename:", file.filename)
-    print("Content-Type:", file.content_type)
+    # print("Filename:", file.filename)
+    # print("Content-Type:", file.content_type)
 
     if filename.endswith(".pdf"):
         text = ""
