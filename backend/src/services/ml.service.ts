@@ -2,10 +2,11 @@ import axios from "axios";
 import fs from "fs";
 import FormData from "form-data";
 import { prisma } from "../config/db";
+import path from "path";
 
-export async function runMlAnalysis(analysisId: string, filePath: string, jobRole: string) {
+export async function runMlAnalysis(analysisId: string, filePath: string, fileName: string, jobRole: string) {
   const form = new FormData();
-  form.append("resume", fs.createReadStream(filePath));
+  form.append("resume", fs.createReadStream(filePath), fileName);
   form.append("job_role", jobRole);
 
   try {

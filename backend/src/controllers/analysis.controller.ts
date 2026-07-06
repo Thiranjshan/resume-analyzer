@@ -17,7 +17,7 @@ export async function createAnalysis(req: AuthRequest, res: Response, next: Next
     });
 
     res.status(202).json({ analysisId: analysis.id, status: "processing" });
-        runMlAnalysis(analysis.id, file.path, jobRole).catch((e) => console.error("ML analysis failed:", e));
+        runMlAnalysis(analysis.id, file.path,  file.originalname, jobRole).catch((e) => console.error("ML analysis failed:", e));
 
   } catch (err) {
     next(err);
