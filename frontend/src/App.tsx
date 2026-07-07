@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
-import NewAnalysis from "./pages/NewAnalysis";
+import NewAnalysis from "./pages/newAnalysis";
 import Processing from "./pages/Processing";
 import Results from "./pages/results";
 import PrivateRoute from "./components/PrivateRoutes";
