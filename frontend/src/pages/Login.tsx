@@ -54,6 +54,19 @@ export default function Login() {
           Register
         </button>
       </p>
+      
+      {/* bypass button  */}
+      <button
+        type="button"
+        onClick={() => {
+          localStorage.setItem("token", "dev-token");
+          localStorage.setItem("userId", "dev-user");
+          window.location.href = "/dashboard";
+        }}
+        className="text-red-700 front-medium underline mt-4" 
+        >
+          Bypass
+        </button>
     </div>
   );
 }

@@ -18,7 +18,11 @@ export default function Dashboard() {
   const [data, setData] = useState<DashboardData | null>(null);
 
   useEffect(() => {
-    api.get<DashboardData>("/dashboard").then((res) => setData(res.data));
+    api.get<DashboardData>("/dashboard")
+    .then((res) => setData(res.data))//;
+    // bypass
+    .catch(() => setData({ totalAnalyses: 0, avgAtsScore: 0, recentAnalyses: [], }));
+    //...
   }, []);
 
   if (!data) return <p className="mt-20 text-center">Loading...</p>;
