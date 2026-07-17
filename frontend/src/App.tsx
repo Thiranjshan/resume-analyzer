@@ -1,7 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
-import NewAnalysis from "./pages/NewAnalysis";
+import NewAnalysis from "./pages/newAnalysis";
 import Processing from "./pages/Processing";
 import Results from "./pages/results";
 import PrivateRoute from "./components/PrivateRoutes";
@@ -14,7 +15,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
 
@@ -27,7 +28,7 @@ export default function App() {
           <Route path="/profile" element={<Profile />} />
         </Route>
 
-        <Route path="*" element={<Login />} />
+        <Route path="*" element={<Home />} />
       </Routes>
     </BrowserRouter>
   );

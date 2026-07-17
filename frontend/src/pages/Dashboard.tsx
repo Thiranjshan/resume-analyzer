@@ -19,9 +19,9 @@ export default function Dashboard() {
 
   useEffect(() => {
     api.get<DashboardData>("/dashboard")
-    .then((res) => setData(res.data))//;
-    // bypass
-    .catch(() => setData({ totalAnalyses: 0, avgAtsScore: 0, recentAnalyses: [], }));
+      .then((res) => setData(res.data))//;
+      // bypass
+      .catch(() => setData({ totalAnalyses: 0, avgAtsScore: 0, recentAnalyses: [], }));
     //...
   }, []);
 
